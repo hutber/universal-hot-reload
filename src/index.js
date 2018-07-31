@@ -62,7 +62,8 @@ const watchServerChanges = (serverConfig) => {
 /**
  * Start webpack dev server for hmr
  */
-const watchClientChanges = clientConfig => {
+const watchClientChanges = Config => {
+  const clientConfig = Config['default'];
   const basePath = clientConfig.output.publicPath;
   const {port} = url.parse(basePath);
   const serverOptions = {
